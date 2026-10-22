@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "last-mile-forecasting"
+version = "0.2.0"
+description = "Research implementation of agent-based forecast revision and daily experience reflection"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+dependencies = ["python-dotenv>=1,<2"]
+
+[project.optional-dependencies]
+agent = ["smolagents[litellm]>=1.24,<2"]
+timesfm = ["timesfm[torch]==2.0.2"]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+last-mile = "last_mile.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["last_mile*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

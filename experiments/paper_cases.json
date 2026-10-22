@@ -1,0 +1,80 @@
+{
+  "source": "https://arxiv.org/pdf/2606.02497",
+  "status": "Reference windows transcribed from Table 6; no ablation runner or reproduced results",
+  "date_convention": "Inclusive forecast_start and forecast_end; training data must have ds < forecast_start",
+  "dataset": {
+    "start": "2024-01-01",
+    "end": "2026-05-05",
+    "rows": 856,
+    "columns": [
+      "ds",
+      "y"
+    ]
+  },
+  "cases": [
+    {
+      "id": "holiday",
+      "forecast_start": "2026-02-01",
+      "forecast_end": "2026-02-23",
+      "horizon": 23,
+      "events": {
+        "spring_festival": [
+          "2026-02-15",
+          "2026-02-23"
+        ]
+      }
+    },
+    {
+      "id": "long_horizon",
+      "forecast_start": "2025-12-31",
+      "forecast_end": "2026-05-05",
+      "horizon": 126,
+      "events": {
+        "new_year": [
+          "2026-01-01",
+          "2026-01-03"
+        ],
+        "spring_festival": [
+          "2026-02-15",
+          "2026-02-23"
+        ],
+        "qingming": [
+          "2026-04-04",
+          "2026-04-06"
+        ],
+        "labor_day": [
+          "2026-05-01",
+          "2026-05-05"
+        ]
+      }
+    },
+    {
+      "id": "memory_w1",
+      "forecast_start": "2026-01-05",
+      "forecast_end": "2026-01-11",
+      "horizon": 7,
+      "events": {}
+    },
+    {
+      "id": "memory_w2",
+      "forecast_start": "2026-01-12",
+      "forecast_end": "2026-01-18",
+      "horizon": 7,
+      "events": {}
+    },
+    {
+      "id": "memory_w3",
+      "forecast_start": "2026-01-19",
+      "forecast_end": "2026-01-25",
+      "horizon": 7,
+      "events": {}
+    }
+  ],
+  "unresolved": [
+    "Original anonymized daily data and scaling",
+    "Exact Claude Sonnet snapshot and sampling settings",
+    "Original TimesFM inference flags and dependency lockfile",
+    "Original complete prompts and trajectories",
+    "Original holiday table and precise alignment policy"
+  ]
+}
